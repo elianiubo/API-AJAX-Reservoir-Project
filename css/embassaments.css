@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:wght@900&family=Rajdhani:wght@600&display=swap');
+
+:root{
+	--percentatge: -0%;
+}
+
+*,*:after,*:before{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+	margin:0;
+	background: #002638;
+	color: #fff;
+	text-align: center;
+}
+
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.water{
+    width:500px;
+    height: 500px;
+    background-color: #35b3e7;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 20px 0 rgba(0,0,0,.8), 0 0 20px 0 rgba(0,0,0,.3);
+    overflow: hidden;
+}
+
+.water:before, .water:after{
+    content:'';
+    position: absolute;
+    width:200%;
+    height: 200%;
+    top: -50%;
+    left: 50%;
+    background: #fff;
+}
+
+.water:before{
+    border-radius: 45%;
+    background:#fff;
+    animation:wave 5s linear infinite;
+}
+
+.water:after{
+    border-radius: 35%;
+    background:rgba(255,255,255,.3);
+    animation:wave 5s linear infinite;
+}
+
+@keyframes wave{
+    0%{
+        transform: translate(-50%, -50%) rotate(0);
+        top: var(--percentatge);
+    }
+    100%{
+        transform: translate(-50%, -50%)  rotate(360deg);
+        top: var(--percentatge);
+    }
+}
+
+#dades{
+	margin-top: 10px;
+	font-family: "Roboto condensed",sans-serif;
+	font-size: 1.5em;
+}
+
+#embassaments,
+#embassaments * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#embassaments {
+  position: relative;
+  background-color: #E6E6E6;
+  border-radius: 4px;
+}
+
+#embassaments select {
+  font-size: 2rem;
+  font-weight: normal;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+}
+#embassaments select:active, #embassaments select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#embassaments:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid #aaa;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
